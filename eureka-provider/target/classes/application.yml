@@ -1,0 +1,14 @@
+server:
+  port: 8711 # 服务提供方
+
+# 指定当前eureka客户端配置
+eureka:
+  client:
+    service-url:
+      # Eureka 注册中心的地址，多个地址有逗号隔开
+      defaultZone: http://localhost:8701/eureka,http://localhost:8702/eureka
+
+#当前服务名称
+spring:
+  application:
+    name: eureka-provider
