@@ -3,7 +3,9 @@ spring:
   # 集群情况下，请保证application.name 相同，否则不可用（在eureka控制台unavailable-replicas中可以看到不可用的集群节点）
   application:
     name: eureka-server
-
+logging:
+  level:
+    com.netflix: warn
 ---
 server:
   port: 8701

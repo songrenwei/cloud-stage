@@ -1,0 +1,28 @@
+package com.srw.consumer.config;
+
+import com.netflix.hystrix.strategy.concurrency.HystrixRequestContext;
+import org.springframework.stereotype.Component;
+
+import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
+import java.io.IOException;
+
+/**
+ * @Description: TODO
+ * @Author: songrenwei
+ * @Date: 2020/11/23/16:55
+ */
+@Component
+@WebFilter(urlPatterns = "/*",asyncSupported = true)
+public class HystrixRequestContextFilter implements Filter {
+
+    @Override
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+        HystrixRequestContext context = HystrixRequestContext.initializeContext();
+        try {
+            filterChain.doFilter(servletRequest, servletResponse);
+        } finally {
+            context.close();
+        }
+    }
+}
