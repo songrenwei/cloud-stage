@@ -23,9 +23,14 @@ eureka:
 #路由到服务名为 eureka-service1 或 eureka-service2中的服务集群去。
 zuul:
   routes:
-    route1:
-      path: /test1/**
-      serviceId: eureka-service1
-    route2:
-      path: /test2/**
-      serviceId: eureka-service2
+    provider:
+      path: /provider/**
+    comsumer:
+      path: /comsumer/**
+  prefix: /api
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'routes'
