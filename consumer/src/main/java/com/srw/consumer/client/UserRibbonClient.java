@@ -136,27 +136,4 @@ public class UserRibbonClient {
         return restTemplate.postForObject(userServiceUrl + "/user/delete/{1}", null, R.class, id);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
