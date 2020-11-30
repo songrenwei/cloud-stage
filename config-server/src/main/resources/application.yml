@@ -1,0 +1,18 @@
+server:
+  port: 8703
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git: #配置存储配置信息的Git仓库
+          uri: https://github.com/songrenwei/springcloud-config.git
+          username: 2543076350@qq.com
+          password: love@520920
+          clone-on-start: true #开启启动时直接从git获取配置
+          search-paths: '{application}'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8701/eureka,http://localhost:8702/eureka

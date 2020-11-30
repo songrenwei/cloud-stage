@@ -1,0 +1,19 @@
+server:
+  port: 8718
+spring:
+  application:
+    name: config-security-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/songrenwei/springcloud-config.git
+          username: 2543076350@qq.com
+          password: love@520920
+          clone-on-start: true #开启启动时直接从git获取配置
+  security:
+    user:
+      name: admin
+      password: 123456
+
+
