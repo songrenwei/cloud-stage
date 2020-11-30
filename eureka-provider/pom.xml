@@ -7,7 +7,7 @@
         <artifactId>cloud-stage</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>provider</artifactId>
+    <artifactId>eureka-provider</artifactId>
 
     <dependencies>
         <dependency>
