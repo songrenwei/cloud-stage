@@ -29,6 +29,12 @@
         <module>eureka-provider</module>
         <module>eureka-consumer</module>
         <module>config-server</module>
+        <module>config-client</module>
+        <module>config-security-server</module>
+        <module>consul-config-client</module>
+        <module>consul-consumer</module>
+        <module>consul-provider</module>
+        <module>gateway</module>
     </modules>
 
     <dependencies>
