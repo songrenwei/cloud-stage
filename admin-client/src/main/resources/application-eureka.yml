@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: admin-client
+server:
+  port: 8726
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+logging:
+  file:
+    name: admin-client.log
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8701/eureka/, http://localhost:8702/eureka/

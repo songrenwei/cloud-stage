@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: admin-server
+server:
+  port: 8725
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8701/eureka/, http://localhost:8702/eureka/
