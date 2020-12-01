@@ -11,10 +11,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
             <groupId>net.dreamlu</groupId>
             <artifactId>mica-core</artifactId>
             <version>${mica.version}</version>

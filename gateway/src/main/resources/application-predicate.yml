@@ -1,0 +1,21 @@
+server:
+  port: 8724
+service-url:
+  user-service: http://localhost:8722
+#spring:
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: after_route
+#          uri: ${service-url.user-service}
+#          predicates:
+#            - After=2020-11-01T12:00:00+08:00[Asia/Shanghai] #在指定时间之后的请求会匹配该路由
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: before_route
+          uri: ${service-url.user-service}
+          predicates:
+            - Before=2020-12-01T12:00:00+08:00[Asia/Shanghai] #在指定时间之前的请求会匹配该路由

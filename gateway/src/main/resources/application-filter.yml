@@ -1,0 +1,95 @@
+server:
+  port: 8724
+service-url:
+  user-service: http://localhost:8722
+#spring:
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: add_request_parameter_route
+#          uri: ${service-url.user-service}
+#          filters:
+#            - AddRequestParameter=username, aa #给请求添加的过滤器
+#          predicates:
+#            - Method=GET
+
+#spring:
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: strip_prefix_route
+#          uri: ${service-url.user-service}
+#          predicates:
+#            - Path=/aaa/**
+#          filters:
+#            - StripPrefix=2 #对指定数量的路径前缀进行去除的过滤器
+
+#spring:
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: prefix_path_route
+#          uri: ${service-url.user-service}
+#          predicates:
+#            - Method=GET
+#          filters:
+#            - PrefixPath=/user #与StripPrefix过滤器恰好相反，会对原有路径进行增加操作的过滤器。
+
+#spring:
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: hystrix_route
+#          uri: ${service-url.user-service}
+#          predicates:
+#            - Method=GET
+#          filters:
+#            - name: Hystrix #断路器降级
+#              args:
+#                name: fallbackcmd
+#                fallbackUri: forward:/fallback
+
+#spring:
+#  redis:
+#    host: localhost
+#    port: 6379
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: requestratelimiter_route
+#          uri: ${service-url.user-service}
+#          filters:
+#            - name: RequestRateLimiter
+#              args:
+#                redis-rate-limiter.replenishRate: 1 #每秒允许处理的请求数量
+#                redis-rate-limiter.burstCapacity: 2 #每秒最大处理的请求数量
+#                key-resolver: "#{@userKeyResolver}" #限流策略，对应策略的Bean
+#          predicates:
+#            - Method=GET
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: retry_route
+          uri: ${service-url.user-service}
+          predicates:
+            - Method=GET
+          filters:
+            - name: Retry
+              args:
+                retries: 1 #需要进行重试的次数
+                statuses: BAD_GATEWAY #返回哪个状态码需要进行重试，返回状态码为5XX进行重试
+                backoff:
+                  firstBackoff: 10ms
+                  maxBackoff: 50ms
+                  factor: 2
+                  basedOnPreviousValue: false
+
+
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
+
+
+
