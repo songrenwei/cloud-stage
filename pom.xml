@@ -35,6 +35,14 @@
         <module>consul-consumer</module>
         <module>consul-provider</module>
         <module>gateway</module>
+        <module>admin-client</module>
+        <module>admin-server</module>
+        <module>admin-server-security</module>
+        <module>oauth2-client</module>
+        <module>oauth2-jwt-server</module>
+        <module>oauth2-server</module>
+        <module>nacos-consumer</module>
+        <module>nacos-provider</module>
     </modules>
 
     <dependencies>
@@ -54,6 +62,13 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.2.0.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>

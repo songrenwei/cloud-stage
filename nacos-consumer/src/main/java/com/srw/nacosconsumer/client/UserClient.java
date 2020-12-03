@@ -1,7 +1,7 @@
-package com.srw.eurekaconsumer.client;
+package com.srw.nacosconsumer.client;
 
-import com.srw.eurekaconsumer.domain.User;
-import com.srw.eurekaconsumer.service.FallbackService;
+import com.srw.nacosconsumer.domain.User;
+import com.srw.nacosconsumer.service.FallbackService;
 import net.dreamlu.mica.core.result.R;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.*;
 /**
  * @Description:
  * @Author: songrenwei
- * @Date: 2020/11/23/14:50
+ * @Date: 2020/11/30/16:59
  */
-@FeignClient(value = "provider", fallback = FallbackService.class)
-public interface UserFeignClient {
+@FeignClient(value = "nacos-provider", fallback = FallbackService.class)
+public interface UserClient {
 
     @PostMapping("/user/create")
     R<?> create(@RequestBody User user);
