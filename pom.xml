@@ -43,6 +43,11 @@
         <module>oauth2-server</module>
         <module>nacos-consumer</module>
         <module>nacos-provider</module>
+        <module>nacos-config-client</module>
+        <module>seata-account-service</module>
+        <module>seata-order-service</module>
+        <module>seata-storage-service</module>
+        <module>sentinel-service</module>
     </modules>
 
     <dependencies>
