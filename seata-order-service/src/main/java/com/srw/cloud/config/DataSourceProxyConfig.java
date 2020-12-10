@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 
 /**
  * 使用Seata对数据源进行代理
- * Created by macro on 2019/11/11.
+ * Created by renwei.song on 2019/11/11.
  */
 @Configuration
 public class DataSourceProxyConfig {

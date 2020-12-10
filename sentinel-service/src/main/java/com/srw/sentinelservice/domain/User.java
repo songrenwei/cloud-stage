@@ -1,7 +1,7 @@
 package com.srw.sentinelservice.domain;
 
 /**
- * Created by macro on 2019/8/29.
+ * Created by renwei.song on 2019/8/29.
  */
 public class User {
 

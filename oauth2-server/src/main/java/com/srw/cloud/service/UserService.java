@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Created by macro on 2019/9/30.
+ * Created by renwei.song on 2019/9/30.
  */
 @Service
 public class UserService implements UserDetailsService {
@@ -28,7 +28,7 @@ public class UserService implements UserDetailsService {
     public void initData() {
         String password = passwordEncoder.encode("123456");
         userList = new ArrayList<>();
-        userList.add(new User("macro", password, AuthorityUtils.commaSeparatedStringToAuthorityList("admin")));
+        userList.add(new User("renwei.song", password, AuthorityUtils.commaSeparatedStringToAuthorityList("admin")));
         userList.add(new User("andy", password, AuthorityUtils.commaSeparatedStringToAuthorityList("client")));
         userList.add(new User("mark", password, AuthorityUtils.commaSeparatedStringToAuthorityList("client")));
     }

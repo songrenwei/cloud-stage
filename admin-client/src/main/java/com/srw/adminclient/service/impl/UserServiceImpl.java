@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Created by macro on 2019/8/29.
+ * Created by renwei.song on 2019/8/29.
  */
 @Service
 public class UserServiceImpl implements UserService {
@@ -64,7 +64,7 @@ public class UserServiceImpl implements UserService {
     @PostConstruct
     public void initData() {
         userList = new ArrayList<>();
-        userList.add(new User(1L, "macro", "123456"));
+        userList.add(new User(1L, "renwei.song", "123456"));
         userList.add(new User(2L, "andy", "123456"));
         userList.add(new User(3L, "mark", "123456"));
     }

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Created by macro on 2019/9/30.
+ * Created by renwei.song on 2019/9/30.
  */
 @RestController
 @RequestMapping("/user")

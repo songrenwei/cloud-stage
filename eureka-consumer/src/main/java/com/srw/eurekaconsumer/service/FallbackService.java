@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @Date: 2020/11/24/15:42
  */
 /**
- * Created by macro on 2019/9/5.
+ * Created by renwei.song on 2019/9/5.
  */
 @Component
 public class FallbackService implements UserFeignClient {
